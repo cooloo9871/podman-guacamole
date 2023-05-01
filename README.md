@@ -14,3 +14,7 @@ CREATE DATABASE guacamole;
 USE guacamole;
 ......
 ```
+
+$ sudo podman build -t gcmysql ~/quay-guacamole/mysql/
+
+$ mkdir ~/gcdata
