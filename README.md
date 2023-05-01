@@ -1,10 +1,10 @@
-# quay-guacamole
+# podman-guacamole
 
-$ git clone https://github.com/cooloo9871/quay-guacamole.git
+$ git clone https://github.com/cooloo9871/podman-guacamole.git
 
-$ sudo podman run --rm guacamole/guacamole /opt/guacamole/bin/initdb.sh --mysql > ~/quay-guacamole/mysql/initdb.sql
+$ sudo podman run --rm guacamole/guacamole /opt/guacamole/bin/initdb.sh --mysql > ~/podman-guacamole/mysql/initdb.sql
 
-$ nano ~/quay-guacamole/mysql/initdb.sql
+$ nano ~/podman-guacamole/mysql/initdb.sql
 ```
 ......
 --
@@ -15,10 +15,10 @@ USE guacamole;
 ......
 ```
 
-$ sudo podman build -t gcmysql ~/quay-guacamole/mysql/
+$ sudo podman build -t gcmysql ~/podman-guacamole/mysql/
 
 $ mkdir ~/gcdata
 
-$ sudo podman build -t gcm ~/quay-guacamole/gcm/
+$ sudo podman build -t gcm ~/podman-guacamole/gcm/
 
-$ sudo podman play kube ~/quay-guacamole/mygcm.yaml
+$ sudo podman play kube ~/podman-guacamole/mygcm.yaml
