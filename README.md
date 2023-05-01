@@ -1,6 +1,6 @@
 # quay-guacamole
 
-
+$ git clone https://github.com/cooloo9871/quay-guacamole.git
 
 $ sudo podman run --rm guacamole/guacamole /opt/guacamole/bin/initdb.sh --mysql > ~/quay-guacamole/mysql/initdb.sql
 
