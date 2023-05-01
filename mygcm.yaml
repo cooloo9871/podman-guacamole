@@ -1,0 +1,41 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-cgm
+spec:
+  containers:
+  - name: gcd
+    image: guacamole/guacd
+    ports:
+    - containerPort: 4822
+      hostPort: 4822
+  - name: gcmysql
+    image: localhost/gcmysql
+    volumeMounts:
+      - mountPath: "/var/lib/mysql"
+        name: gcmysql
+    ports:
+    - containerPort: 3306
+      hostPort: 3306
+  - name: gcm
+    image: localhost/gcm
+    env:
+    - name: MYSQL_HOSTNAME
+      value: localhost
+    - name: MYSQL_USER
+      value: bigred
+    - name: MYSQL_PASSWORD
+      value: bigred
+    - name: MYSQL_DATABASE
+      value: guacamole
+    - name: GUACD_HOSTNAME
+      value: localhost
+    - name: GUACD_PORT
+      value: 4822
+    ports:
+    - containerPort: 8080
+      hostPort: 8080
+  volumes:
+   - name: gcmysql
+     hostPath:
+       path: /home/bigred/gcdata
