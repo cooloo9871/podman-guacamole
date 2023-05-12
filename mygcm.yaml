@@ -38,4 +38,4 @@ spec:
   volumes:
    - name: gcmysql
      hostPath:
-       path: /home/bigred/gcdata
+       path: ~gcdata
