@@ -8,6 +8,7 @@ sudo podman run --rm guacamole/guacamole /opt/guacamole/bin/initdb.sh --mysql > 
 ```
 nano ~/podman-guacamole/mysql/initdb.sql
 ```
+Add the following content
 ```
 ......
 --
