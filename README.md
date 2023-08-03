@@ -28,5 +28,5 @@ mkdir ~/gcdata
 sudo podman build -t gcm ~/podman-guacamole/gcm/
 ```
 ```
-sudo podman play kube ~/podman-guacamole/mygcm.yaml
+cat ~/podman-guacamole/mygcm.yaml | envsubst | sudo podman play kube -
 ```
