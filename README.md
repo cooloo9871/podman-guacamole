@@ -27,12 +27,13 @@ mkdir ~/gcdata
 ```
 sudo podman build -t gcm ~/podman-guacamole/gcm/
 ```
+須注意 hostpath 位置
 ```
 cat ~/podman-guacamole/mygcm.yaml | envsubst | sudo podman play kube -
 ```
 
 ## 登入網址
-http://192.168.61.132:8080/guacamole/
+http://localhost:8080/guacamole/
 
 ## 管理者帳號
 Username: guacadmin
